@@ -1,0 +1,8 @@
+{
+  "name": "Developer",
+  "description": "More detailed logs and the faster-whisper engine for technical vocabulary.",
+  "overrides": {
+    "app": { "log_level": "DEBUG" },
+    "voice": { "engine": "faster-whisper" }
+  }
+}

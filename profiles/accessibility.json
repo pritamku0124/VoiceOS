@@ -1,0 +1,8 @@
+{
+  "name": "Accessibility",
+  "description": "Hands-free use: wake word on, slower speech, spoken confirmations.",
+  "overrides": {
+    "wake_word": { "enabled": true },
+    "tts": { "speed": 0.85 }
+  }
+}

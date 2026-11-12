@@ -1,0 +1,54 @@
+{
+  "app": {
+    "log_level": "INFO",
+    "start_minimized": false,
+    "start_with_windows": false
+  },
+  "voice": {
+    "input_device": null,
+    "engine": "vosk",
+    "language": "en-US",
+    "model": null,
+    "push_to_talk": true,
+    "sample_rate": 16000,
+    "min_confidence": 0.55,
+    "vad_aggressiveness": 2,
+    "end_silence_ms": 800,
+    "max_utterance_seconds": 10,
+    "no_speech_timeout_seconds": 7
+  },
+  "wake_word": {
+    "enabled": true,
+    "model": "hey_jarvis",
+    "threshold": 0.7,
+    "patience": 2
+  },
+  "tts": {
+    "enabled": true,
+    "engine": "windows",
+    "voice": "Zira",
+    "speed": 1.0,
+    "volume": 0.9
+  },
+  "ai": {
+    "enabled": true,
+    "provider": "ollama",
+    "model": "qwen2.5:1.5b",
+    "base_url": "http://localhost:11434",
+    "timeout_seconds": 60
+  },
+  "safety": {
+    "dry_run": false,
+    "confirm_destructive_actions": true,
+    "emergency_stop_hotkey": "ctrl+alt+esc"
+  },
+  "privacy": {
+    "save_recordings": false,
+    "save_history": true
+  },
+  "ui": {
+    "theme": "dark",
+    "window_width": 1100,
+    "window_height": 720
+  }
+}

@@ -1,0 +1,13 @@
+# pyproject.toml is the standard place for Python project metadata and tool settings.
+[project]
+name = "voiceos"
+version = "0.6.1"
+description = "Voice-controlled assistant for Windows 11"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# Show a short summary of skipped/failed tests at the end of a run.
+addopts = "-ra"

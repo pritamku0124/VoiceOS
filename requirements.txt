@@ -1,0 +1,35 @@
+# Runtime dependencies for VoiceOS.
+# Install with:  python -m pip install -r requirements.txt   (inside the .venv)
+#
+# Packages for completed phases are active. Later phases uncomment theirs, so we never
+# install something before we need it. Every version below was checked to ship a Windows
+# wheel for Python 3.14 (see docs/INSTALLATION.md).
+
+# Phase 1 - desktop UI (Essentials = core Qt modules only, ~1/3 the size of full PySide6)
+PySide6-Essentials==6.12.0
+
+# Phase 2 - microphone + speech recognition
+sounddevice==0.5.6             # reads the microphone (bundles the PortAudio library)
+numpy==2.5.4                   # fast maths on audio samples
+vosk==0.3.45                   # offline speech-to-text
+webrtcvad-wheels==2.0.14.post1 # voice activity detection (is someone speaking?)
+# faster-whisper==1.2.1        # optional later: more accurate, much heavier
+
+# Phase 3 - text to speech
+comtypes==1.5.0                # talks to Windows' built-in SAPI voices (pure Python)
+# piper-tts==1.8.0             # optional neural voices - BLOCKED by Smart App Control on this PC
+
+# Phase 4 - wake word ("Hi Jarvis"): runs openWakeWord's ONNX models directly.
+# (The openwakeword package itself is NOT needed: importing it pulls in scipy + scikit-learn.)
+onnxruntime==1.31.1
+
+# Phase 5 - AI intent recognition
+# ollama==0.6.3
+# pydantic==2.14.3
+
+# Phase 6 - Windows control: NO new packages. Python's built-in ctypes calls Windows'
+# own user32/kernel32 functions directly (see integrations/windows/win32_api.py), so there
+# is no extra native code for Smart App Control to vet. pywin32 / pyautogui are not needed.
+
+# Phase 7 - exact volume / mute (Windows Core Audio, built on comtypes)
+# pycaw==20260927

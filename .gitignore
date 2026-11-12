@@ -1,0 +1,34 @@
+# Things git should NOT track (machine-specific, generated, private or huge).
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Virtual environment (re-created from requirements.txt)
+.venv/
+
+# Secrets - .env.example is committed, .env is not
+.env
+
+# Runtime output
+logs/*
+!logs/.gitkeep
+recordings/*
+!recordings/.gitkeep
+*.db
+*.sqlite3
+
+# Downloaded AI models (hundreds of MB)
+assets/models/**/*
+!assets/models/**/.gitkeep
+
+# Build output
+build/
+dist/
+*.spec
+
+# Editors / OS
+.vscode/
+.idea/
+Thumbs.db

@@ -1,0 +1,4 @@
+Recent conversation:
+{history}
+
+Request: "{text}"

@@ -1,0 +1,141 @@
+/*
+  VoiceOS dark theme.
+  QSS = "Qt Style Sheets": the same idea as CSS on websites, applied to Qt widgets.
+  Selectors:  QPushButton { }          -> every QPushButton
+              #Sidebar { }             -> the widget whose objectName is "Sidebar"
+              QPushButton:checked { }  -> a button in its "checked" state
+  Colours match utils/constants.py (Colors).
+*/
+
+* {
+    font-family: "Inter", "Segoe UI Variable Text", "Segoe UI";
+    font-size: 10pt;
+    color: #FFFFFF;
+}
+
+QMainWindow, #Root {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #2A1F45, stop:0.5 #10121C, stop:1 #241A3B);
+}
+
+/* ---------- Sidebar ---------- */
+#Sidebar {
+    background: #191D2A;
+    border-radius: 16px;
+}
+#LogoBadge {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #9B6CE0, stop:1 #B77AD8);
+    border-radius: 10px;
+    font-family: "Segoe Fluent Icons", "Segoe MDL2 Assets";
+    font-size: 15pt;
+}
+#LogoText { font-size: 15pt; font-weight: 600; }
+
+#NavButton {
+    background: transparent;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 12px;
+    text-align: left;
+    color: #A7A9BC;
+    font-size: 10.5pt;
+}
+#NavButton:hover { background: #222738; color: #FFFFFF; }
+#NavButton:checked {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #9B6CE0, stop:1 #B77AD8);
+    color: #FFFFFF;
+    font-weight: 600;
+}
+
+/* ---------- Top bar ---------- */
+#PageTitle { font-size: 13pt; font-weight: 600; }
+#Pill {
+    background: #222738;
+    border-radius: 11px;
+    padding: 4px 12px;
+    color: #A7A9BC;
+    font-size: 9pt;
+}
+#Pill[state="ok"]   { color: #35C98A; background: rgba(53, 201, 138, 0.14); }
+#Pill[state="warn"] { color: #F0B65A; background: rgba(240, 182, 90, 0.14); }
+#Pill[state="off"]  { color: #A7A9BC; }
+#Pill[state="live"] { color: #FFFFFF; background: #EF6262; font-weight: 600; }
+#Pill[state="wake"] { color: #FFFFFF; background: #9B6CE0; font-weight: 600; }
+
+#SmallButton {
+    background: #222738;
+    border: 1px solid #2E3448;
+    border-radius: 8px;
+    padding: 4px 12px;
+    color: #A7A9BC;
+    font-size: 9pt;
+    margin-top: 6px;
+}
+#SmallButton:hover { border-color: #9B6CE0; color: #FFFFFF; }
+
+#CommandInput { background: #191D2A; border: 1px solid #2E3448; border-radius: 14px; }
+#CommandEdit { background: transparent; border: none; padding: 8px 0; font-size: 10.5pt; }
+#SendButton {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #9B6CE0, stop:1 #B77AD8);
+    border: none; border-radius: 10px; min-width: 38px; min-height: 34px;
+    font-family: "Segoe Fluent Icons", "Segoe MDL2 Assets"; font-size: 12pt;
+}
+#SendButton:hover { background: #8A5BD0; }
+#Interpretation { font-family: "Cascadia Mono", "Consolas"; font-size: 10pt; font-weight: 400; color: #E6E1F5; }
+#Pill[state="error"] { color: #EF6262; background: rgba(239, 98, 98, 0.14); }
+
+/* ---------- Content ---------- */
+#Content { background: #10121C; border-radius: 16px; }
+QScrollArea, #ScrollBody { background: transparent; border: none; }
+
+#Greeting { font-size: 20pt; font-weight: 600; }
+#Subtitle, #Muted { color: #A7A9BC; }
+#SectionTitle { font-size: 12pt; font-weight: 600; }
+
+#Card {
+    background: #191D2A;
+    border-radius: 16px;
+}
+#HeroCard {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #222738, stop:1 #191D2A);
+    border-radius: 18px;
+}
+#CardLabel { color: #A7A9BC; font-size: 9pt; }
+#CardValue { font-size: 11pt; font-weight: 600; }
+
+#MicButton {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #9B6CE0, stop:1 #B77AD8);
+    border: 4px solid rgba(155, 108, 224, 0.35);
+    border-radius: 48px;
+    font-family: "Segoe Fluent Icons", "Segoe MDL2 Assets";
+    font-size: 26pt;
+}
+#MicButton:hover   { border: 4px solid rgba(183, 122, 216, 0.7); }
+#MicButton:pressed { background: #8A5BD0; }
+#MicButton[listening="true"] {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #EF6262, stop:1 #B77AD8);
+    border: 4px solid rgba(239, 98, 98, 0.55);
+}
+#TapToSpeak { font-size: 14pt; font-weight: 600; }
+
+#Suggestion {
+    background: #222738;
+    border-radius: 12px;
+}
+#Suggestion:hover { background: #2A3045; }
+#SuggestionIcon {
+    color: #B77AD8;
+    font-family: "Segoe Fluent Icons", "Segoe MDL2 Assets";
+}
+
+#PhaseBadge {
+    background: rgba(155, 108, 224, 0.18);
+    color: #B77AD8;
+    border-radius: 10px;
+    padding: 4px 10px;
+    font-size: 9pt;
+}
+
+QScrollBar:vertical { background: transparent; width: 8px; margin: 4px; }
+QScrollBar::handle:vertical { background: #2A3045; border-radius: 4px; min-height: 30px; }
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical { height: 0; }
+QToolTip { background: #222738; color: #FFFFFF; border: 1px solid #9B6CE0; padding: 4px; }

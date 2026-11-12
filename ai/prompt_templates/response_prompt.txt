@@ -1,0 +1,3 @@
+# Not used yet. Spoken replies are built from templates in ai/response_generator.py,
+# which is faster and more predictable than asking the model. Phase 10 (Project Assistant)
+# will use this file for longer explanations.
